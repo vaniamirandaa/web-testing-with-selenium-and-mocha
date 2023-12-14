@@ -1,0 +1,21 @@
+{
+  "name": "web-testing",
+  "version": "1.0.0",
+  "description": "A web testing using Selenium and Mocha framework with Page Object Model desgin pattern.\r For this simple project I use https://saucedemo.com",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chromedriver": "^119.0.1",
+    "mocha": "^10.2.0",
+    "selenium-webdriver": "^4.15.0"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "devDependencies": {}
+}
