@@ -9,7 +9,7 @@ const LogoutPage = require("../pages/logout");
 
 describe("web testing", function () {
   this.timeout(15000);
-  let driver;
+  let driver, loginPage
   let url = "https://saucedemo.com";
 
   beforeEach(async () => {
@@ -22,6 +22,10 @@ describe("web testing", function () {
       .build();
 
     await driver.get(url);
+
+    loginPage = new LoginPage(driver);
+
+
   });
 
   afterEach(async () => {
@@ -29,14 +33,12 @@ describe("web testing", function () {
     await driver.quit();
   });
 
-  it("login success", async () => {
-    const loginPage = new LoginPage(driver);
+  it("should success login with valid credentials", async () => {
 
     await loginPage.login("standard_user", "secret_sauce");
   });
 
-  it("login failed", async () => {
-    const loginPage = new LoginPage(driver);
+  it("should fail login with invalid credentials", async () => {
 
     await loginPage.login("standard_userr", "secret_sauce");
 
@@ -48,7 +50,6 @@ describe("web testing", function () {
   });
 
   it("should sort products by various criteria", async () => {
-    const loginPage = new LoginPage(driver);
 
     await loginPage.login("standard_user", "secret_sauce");
 
@@ -74,7 +75,6 @@ describe("web testing", function () {
   });
 
   it("add product to cart and checkout", async () => {
-    const loginPage = new LoginPage(driver);
     const productsPage = new ProductsPage(driver);
     const checkoutPage = new CheckoutPage(driver);
 
@@ -90,8 +90,7 @@ describe("web testing", function () {
     await checkoutPage.clickFinish();
   });
 
-  it("logout", async () => {
-    const loginPage = new LoginPage(driver);
+  it("logout from website", async () => {
     const logoutPage = new LogoutPage(driver);
 
     await loginPage.login("standard_user", "secret_sauce");
