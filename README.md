@@ -5,7 +5,7 @@ For this simple project I use https://saucedemo.com
 
 Test result:
 
-![Alt text](<Screenshot 2023-12-14 133439.png>)
+![Alt text](<Screenshot 2023-12-19 113957-1.jpg>)
 
 How to run the repository:
 1. git clone https://github.com/vaniamirandaa/web-testing-with-selenium-and-mocha/ 
